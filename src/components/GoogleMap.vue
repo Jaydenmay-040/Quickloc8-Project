@@ -2,7 +2,6 @@
   <div id="mapContainer">
     <div id="btnContainer">
       <button @click="drawMarkers">Draw Markers</button>
-      <button @click="drawDirection">Draw Direction</button>
       <button @click="clearMap">Clear Map</button>
     </div>
     <GmapMap 
@@ -18,7 +17,6 @@
         :clickable="true"
         :draggable="true"
         @click="center = m.position"/>
-        <gmap-polygon :paths="paths"></gmap-polygon>
     </GmapMap>
   </div>
 </template>
@@ -36,7 +34,6 @@ export default {
     return {
       markers: [],
       center: taxi1,
-      paths: [],
     };
   },
   methods: {
@@ -62,11 +59,7 @@ export default {
         },
       ];
     },
-    drawDirection() {
-      this.paths = [taxi1, taxi2, taxi3, taxi4, taxi5, taxi6];
-    },
     clearMap() {
-      this.paths = [];
       this.markers = [];
     },
   },
@@ -81,5 +74,8 @@ export default {
   align-items: center;
   /* position: relative;
   bottom: 20px; */
+ }
+ .gm-style img {
+   background-image: url(../assets/Quicloc8-logo.png);
  }
 </style>
