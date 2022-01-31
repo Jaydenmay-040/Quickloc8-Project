@@ -21,7 +21,7 @@
       <button @click="clearMap" class="icon">
         <ion-icon name="close-circle-outline"></ion-icon>
       </button>
-      <button @click="clearMap" class="icon">
+      <button class="icon">
         <a class="msgBtn" href="#message">
           <ion-icon name="chatbubbles-outline"></ion-icon>
         </a>

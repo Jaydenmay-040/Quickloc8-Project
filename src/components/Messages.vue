@@ -1,5 +1,10 @@
 <template>
     <div id="message">
+        <button class="back">
+            <a class="msgBtn" href="#mapContainer">
+                <ion-icon name="return-up-back-outline"></ion-icon>
+            </a>
+        </button>
         <div class="messages">
             <ul>
                 <li v-for="message in message" :key="message.mesage">
@@ -31,6 +36,11 @@ import messagesData from './messages.json';
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+    }
+    .back {
+        position: relative;
+        bottom: 272px;
+        right: 40px;
     }
     #message{
         width: 100vw;
