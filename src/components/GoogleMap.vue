@@ -14,20 +14,27 @@
         :position="m.position"
         @click="center = m.position"/>
     </GmapMap>
-    <div id="navigation">
-      <button @click="drawMarkers" class="icon">
-        <ion-icon name="location-outline"></ion-icon>
-      </button>
-      <button @click="clearMap" class="icon">
-        <ion-icon name="close-circle-outline"></ion-icon>
-      </button>
-      <button class="icon">
-        <a class="msgBtn" href="#message">
-          <ion-icon name="chatbubbles-outline"></ion-icon>
+    <ul class="nav">
+      <span class="nav-indicator"></span>
+      <li>
+        <a @click="drawMarkers">
+          <i class='bx bx-map'></i>
+          <span class="title">Locate</span>
         </a>
-      </button>
-        <div class="indicator"></div>
-    </div>
+      </li>
+      <li>
+        <a @click="clearMap" class="nav-item-active">
+          <i class='bx bx-x-circle'></i>
+          <span class="title">Clear</span>
+        </a>
+      </li>
+      <li>
+          <a href="#message">
+            <i class="bx bxs-chat"></i>
+            <span class="title">Messages</span>
+          </a>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -74,15 +81,6 @@ export default {
     },
   },
 };
-// const list = document.querySelectorAll('.list');
-// function activeLink() {
-//   list.forEach((item) =>
-//   item.classList.remove('active'));
-//   this.classList.add('active');
-// }
-// +
-// list.forEach((item) =>
-// item.addEventListener('click', activeLink));
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -95,17 +93,57 @@ export default {
   bottom: 20px; */
   height: 100vh;
 }
-.gm-style img {
-  background-image: url(../assets/Quicloc8-logo.png);
+.nav {
+  position: relative;
+  list-style-type: none;
+  display: flex;
+  height: 60px;
+  border-radius: 12px;
+  background: #FFCCBC;
+  top: 35px;
+}
+.nav li a {
+  text-decoration: none;
+  color: #2e302f;
+  width: 120px;
+  height: 100%;
+  display: inline-grid;
+  place-items: center;
+  font-size: 30px;
+  z-index: 1;
+  position: relative;
+}
+.nav li a .title {
+  display: none;
+  font-size: 16px;
+}
+.nav li a:hover {
+  color: #fff;
+}
+.nav li a.nav-item-active {
+  color: #fff;
+  transform: translateY(-30%);
+  font-size: 45px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+.nav li a.nav-item-active .title {
+  display: block;
+}
+.nav .nav-indicator {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #FFCCBC;
+  position: absolute;
+  top: -30px;
+  left: calc(200px - 55px);
+  transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 :root {
-  --clr: #2e302f;
-}
-#navigation {
-  position: relative;
-  top: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  --secondary: #FFCCBC;
+  --accent: #2e302f;
+  --bg-nav: #220455;
+  --color-nav: #644c89;
+  --color-nav-active: #fff;
 }
 </style>

@@ -12,8 +12,12 @@ export default {
 </script>
 
 <style>
+:root {
+  --secondary: #FFCCBC;
+  --accent: #2e302f;
+}
 .loader {
-    background-color: #FFCCBC;
+    background-color: var(--secondary);
     bottom: 0;
     color: #FF5722;
     display: block;

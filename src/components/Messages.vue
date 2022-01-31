@@ -10,7 +10,7 @@
                 <li v-for="message in message" :key="message.mesage">
                     <img src="../assets/E.png" alt="">
                     <div class="group">
-                        <div class="title"><h1>{{message.subject}}</h1></div>
+                        <div class="msg_title"><h1>{{message.subject}}</h1></div>
                         <div class="text"><p>{{message.message}}</p></div>
                     </div>
                     <div class="date"><p class="date">{{message.display}}</p></div>
@@ -66,7 +66,7 @@ import messagesData from './messages.json';
     .group {
         width: 87%;
     }
-    .title{
+    .msg_title{
         display: flex;
         font-size: 10px;
         width: 92vw;
