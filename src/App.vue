@@ -52,6 +52,8 @@ body {
   background: rgb(255,87,34);
   background: linear-gradient(333deg, rgba(255,87,34,1) 35%, rgba(246,130,94,1) 100%);
   overflow-y: hidden;
+  display: flex;
+  justify-content: center;
   /* primary: '#FF5722',
   secondary: '#FFCCBC',
   accent: '#2e302f',

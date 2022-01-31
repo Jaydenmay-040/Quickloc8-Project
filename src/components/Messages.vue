@@ -1,15 +1,17 @@
 <template>
     <div id="message">
-        <ul>
-            <li v-for="message in message" :key="message.mesage">
-                <img src="../assets/E.png" alt="">
-                <div class="group">
-                    <div class="title"><h1>{{message.subject}}</h1></div>
-                    <div class="text"><p>{{message.message}}</p></div>
-                </div>
-                <div class="date"><p class="date">{{message.display}}</p></div>
-            </li>
-        </ul>
+        <div class="messages">
+            <ul>
+                <li v-for="message in message" :key="message.mesage">
+                    <img src="../assets/E.png" alt="">
+                    <div class="group">
+                        <div class="title"><h1>{{message.subject}}</h1></div>
+                        <div class="text"><p>{{message.message}}</p></div>
+                    </div>
+                    <div class="date"><p class="date">{{message.display}}</p></div>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -33,15 +35,27 @@ import messagesData from './messages.json';
     #message{
         width: 100vw;
         height: 100vh;
-        overflow-y: scroll;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .messages {
+        width: 90%;
+        height: 90vh;
         background-color: white !important;
+        display: flex;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
     #message li {
-            display: flex;
-            width: 100%;
-            height: 7vh;
-            border-bottom: 0.1px solid #767A7E;
-        }
+        display: flex;
+        width: 92%;
+        height: 10vh;
+        border-bottom: 0.1px solid #767A7E;
+    }
+    .group {
+        width: 87%;
+    }
     .title{
         display: flex;
         font-size: 10px;
@@ -60,7 +74,6 @@ import messagesData from './messages.json';
         color: #767A7E;
     }
     .date{
-        height: 100vh;
         display: flex;
         text-align: center;
         margin-top: 10px;
